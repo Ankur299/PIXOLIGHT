@@ -17,6 +17,7 @@ function compress($source, $destination, $quality) {
 
     else{
         return "only jpg/jpeg/gif/png files are allowed";
+
     }
 
     imagejpeg($image, $destination, $quality);

@@ -21,7 +21,10 @@ class main
         return mysqli_query($this->link, $query) or die(mysqli_error($this->link));
     }
 
-
+    function delete($table, $condition){
+        $query = "DELETE FROM $table WHERE $condition";
+        return mysqli_query($this->link, $query) or die(mysqli_error($this->link));
+    }
 
     //secondary checking functions
     function ifexist($table, $condition){
@@ -41,6 +44,19 @@ class main
         }
     }
 
+    function count($table, $condition){
+        /*
+        * returns row count.
+        * accepts two strings. one is table name and the other is condition
+        */
+
+        $query = "SELECT * FROM $table WHERE $condition";
+        $result = mysqli_query($this->link, $query) or die(mysqli_error($this->link));
+        $num=mysqli_num_rows($result);
+
+        return $num;
+    }
+
 
     //getters
 
@@ -54,6 +70,17 @@ class main
         $result = mysqli_query($this->link, $query) or die(mysqli_error($this->link));
         $row = mysqli_fetch_array($result);
         return $row["$column"];
+    }
+
+    function ReturnResult($table, $condition){
+        /*
+         * returns the result of a query
+         * accepts two  @params. table_name and condition
+         */
+
+        $query = "SELECT * FROM $table WHERE $condition";
+        $result = mysqli_query($this->link, $query) or die(mysqli_error($this->link));
+        return $result;
     }
 
 

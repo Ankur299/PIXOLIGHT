@@ -1,6 +1,8 @@
 <?php
 include "../dbconnect.php";
-
+if(!$_SESSION['final'] && $_SESSION[number]!=""){
+    header("location: ../signup");
+}
 if($_SESSION['final']){
     header("location: ../");
 }
