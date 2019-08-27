@@ -47,5 +47,8 @@ else{
             echo "some error occurred";
         }
     }
+    else{
+        echo "Problem in uploading the image!! try a different image";
+    }
 }
 ?>
