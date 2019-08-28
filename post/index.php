@@ -15,6 +15,9 @@ if(!$new->ifexist("posts", "id='$post_id'")){
     echo "No such post <a href='../home'>go home</a>";
 }
 
+//adds 1 to view;
+$new->update("posts", "views=views+1", "id='$post_id'");
+
 $row = mysqli_fetch_array($new->ReturnResult("posts", "id='$post_id'"));
 //post info
 print_r($row);
