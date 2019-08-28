@@ -8,6 +8,7 @@ $number = $_SESSION['number'];
 
 if($number==""){
     echo "You can't like without login";
+
 }
 else{
     $user_id = $new->FindColumn("users", "phone = '$number'", "id");

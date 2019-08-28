@@ -5,13 +5,14 @@ if(!$_SESSION['final'] && $_SESSION['number']!=""){
     header("location: ../signup");
 }
 if(!$_SESSION['final'] || $_SESSION['number']==""){
-    header("location: ../");
+    header("location: ../home");
 }
 ?>
 
 <form action="post.php" method="post" enctype="multipart/form-data">
     <input type="file" name="image" required>
     <input type="text" placeholder="Caption" name="caption" required>
+    <input type="text" placeholder="eg. nature, portrait, girl, beautiful" name="tags">
 
     <h2>Additional</h2>
     <?php
@@ -22,6 +23,8 @@ if(!$_SESSION['final'] || $_SESSION['number']==""){
 
 
     ?>
+
+
     <input type="number" name="price" placeholder="price" value=0 <?php if($num<500){echo "disabled"; } ?> required>
     <br>
     <?php if($num<500){

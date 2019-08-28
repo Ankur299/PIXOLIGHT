@@ -6,3 +6,4 @@ create table pico.comments(id int(10) not null auto_increment, post_id int(10), 
 create table pico.report(id int(10) not null auto_increment, post_id int(10), primary key (id));
 create table pico.follow(id int(10) not null auto_increment, follower int(10), following int(10), primary key (id));
 ALTER TABLE pico.`posts` ADD `views` BIGINT(10) NULL DEFAULT '0' AFTER `iso`, ADD `downloads` BIGINT(10) NULL DEFAULT '0' AFTER `views`;
+ALTER TABLE pico.`posts` ADD `tags` VARCHAR(300) NOT NULL AFTER `caption`;ALTER TABLE pico.`posts` ADD `tags` VARCHAR(300) NOT NULL AFTER `caption`;

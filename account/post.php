@@ -25,7 +25,7 @@ $caption = mysqli_escape_string($link, $_POST['caption']);
 if($_POST['price']>0) {
     $price = $_POST['price'];
 }
-
+$tags = mysqli_escape_string($link, $_POST['tags']);
 $camera = mysqli_escape_string($link, $_POST['camera']);
 $lens = mysqli_escape_string($link, $_POST['lens']);
 $focal = mysqli_escape_string($link, $_POST['focal']);
@@ -40,7 +40,7 @@ if(file_exists($destination)){
 }
 else{
     if(compress($_FILES['image']['tmp_name'], $destination, 20)==$destination) {
-        if($new->insert("posts", "user_id, image_dir, price, caption, camera, lens, focal, shutter, iso", "'$user_id', '$destination', '$price', '$caption', '$camera', '$lens', '$focal', '$shutter','$iso'" )){
+        if($new->insert("posts", "user_id, image_dir, price, caption, tags, camera, lens, focal, shutter, iso", "'$user_id', '$destination', '$price', '$caption', '$tags', '$camera', '$lens', '$focal', '$shutter','$iso'" )){
             echo "Uploaded";
         }
         else{

@@ -1,11 +1,10 @@
-function callajax(link, d, udate=" ") {
+function callajax(link, d) {
     $.ajax({
         type : 'get',
         url : link,
         data : d,
         success : function (data) {
             alert(data);
-            $().load(" "+update);
         },
         error : function () {
             alert("file not found");
