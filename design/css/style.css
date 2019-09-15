@@ -6,7 +6,7 @@
 	background-size: cover !important;
 	background-repeat: no-repeat !important;
 	position: fixed;
-	
+
 }
 
 .blur{
@@ -32,4 +32,23 @@ circle{
 
 .shd{
 	box-shadow: 0 0 7px grey;
+}
+
+.hide{
+	display: none;
+}
+.bt{
+	padding: 2px 5px !important;
+	border-radius: 0;
+	font-size: 12px;
+	border: 0;
+}
+.btn-sec{
+	background: rgba(0,0,0,0.3);
+	color: white;
+}
+.bt:focus{
+	border: 0 !important;
+	box-shadow: 0 0 0;
+	color: white
 }

@@ -28,8 +28,8 @@ if($_SESSION['final']){
 		<h5 class="text-center">Login here</h5>
 		<br>
 		<form id="form" action="login.php" method="post" class="container">
-		    <input type="number" placeholder="phone number" name="number" class="form-control frm"><br>
-		    <input type="password" placeholder="password" name="password"class="form-control frm"><br>
+		    <input type="number" placeholder="phone number" name="number" class="form-control frm" required><br>
+		    <input type="password" placeholder="password" name="password"class="form-control frm" required><br>
 		    <input id="submit" type="submit" value="Login" class="form-control frm btn-primary no-border">
 		</form>
 		<p class="text-center"><a href="../signup" class="lnk">Create an account</a></p>
@@ -52,14 +52,14 @@ if($_SESSION['final']){
     	       			 },
 		    	        uploadProgress: function (event, position, total, percentComplete) {
 
-		    	            
+
 		    	        },
 		    	        success: function (data) {
 
 		    	         	if(data==1){
 		    	         		window.location.href="../home";
 		    	         	}
-		    	         	
+
 		    	         	else{
 		    	         		alert(data);
 		    	         		$(".load").fadeOut();
@@ -71,8 +71,8 @@ if($_SESSION['final']){
 		    	         }
 		    	    });
 
-		
+
 		});
 	</script>
-	
+
 </html>

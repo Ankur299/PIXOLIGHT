@@ -1,3 +1,4 @@
 /* it needs jQuery and bootstrap to work */
-
-$("circle").attr("radius")
+function redirect(str){
+  window.location.href=str;
+}

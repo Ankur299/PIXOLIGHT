@@ -35,7 +35,7 @@
 	</div>
 
 
-
+<div class="load"><div class="load-circle"></div></div>
 
 </body>
 
@@ -45,27 +45,30 @@
 	<script src="../design/js/form.js"></script>
 	<script type="text/javascript">
 		$("#submit").click(function(event){
-					event.preventDefault();
-					$('#form').ajaxSubmit({
+					$('#form').ajaxForm({
 		    	        url: 'register_number.php',
+                  beforeSubmit: function(){
+                    $(".load").fadeIn();
+                  },
 		    	        success: function (data) {
 
 		    	         	if(data==1){
 		    	         		window.location.href="final_submission.php";
 		    	         	}
-		    	         	
+
 		    	         	else{
 		    	         		alert(data);
+                      $(".load").fadeOut();
 		    	         	}
 		    	         },
 		    	         error: function(){
 		    	         	alert("Some unknown error");
+                    $(".load").fadeOut();
 		    	         }
 		    	    });
 
-		
+
 		});
 	</script>
 
 </html>
-
