@@ -11,9 +11,9 @@ if($new->ifexist("users", "phone=$number")){
 }
 else{
     if($new->insert("users", "phone", "$number")){
-        header("location: final_submission.php");
         $_SESSION['number']=$number;
         $_SESSION['final']=False;
+        echo 1;
     }
     else{
         echo "Some unknown error occurred";

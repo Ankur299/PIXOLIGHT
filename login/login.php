@@ -2,7 +2,7 @@
 
 include "../dbconnect.php";
 require_once "../main.php";
-
+error_reporting(0);
 if($_SESSION['final']){
     header("location: ../");
 }
@@ -17,7 +17,7 @@ if($new->ifexist("users", "phone='$phone'")){
     {
         $_SESSION['number']=$phone;
         $_SESSION['final']=True;
-        echo "Logged In";
+        echo 1;
     }
     else
      {  echo "Wrong password";}

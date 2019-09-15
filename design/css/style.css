@@ -1,0 +1,35 @@
+/*initialize with bootstrap and jquery*/
+.mb_banner{
+	height: 100vh;
+	width: 100%;
+	background-position: center !important;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	position: fixed;
+	
+}
+
+.blur{
+	filter: blur(2px);
+}
+.blur_m{
+	filter: blur(4px);
+}
+.blur_h{
+	filter: blur(7px);
+}
+
+circle{
+	position: absolute;
+	min-height: 10px;
+	min-width: 10px;
+	background:red;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+
+}
+
+.shd{
+	box-shadow: 0 0 7px grey;
+}

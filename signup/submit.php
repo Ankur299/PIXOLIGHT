@@ -2,7 +2,7 @@
 include "../dbconnect.php";
 include "../main.php";
 include "../functions.php";
-
+error_reporting(0);
 $number=$_SESSION['number'];
 $destination="../profile/".$_FILES['image']['name'];
 $new=new main($link);
@@ -20,14 +20,15 @@ else
                 if($new->update("users", "name='$name', email='$email', password='$password', profile='$destination'", "phone='$number'"))
                 {
                     $_SESSION['final']=True;
-                    echo "Registered";
+                    echo 1;
                 }
                 else{
-                    echo "Some unknown error occurred";
+                    echo "Some error occurred";
                 }
         }
         else{
-            echo "Some error occurred! try a different image";
+            echo "some error occured! try different image";
+            
         }
     }
 ?>
