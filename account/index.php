@@ -51,36 +51,41 @@
 
 
         <!-- add area -->
-        <p>
-        <button style="margin-top: 10px" class="btn btn-sec u bt" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
-          edit dp
+        <p style="margin-bottom: 0">
+        <button style="margin-top: 12px" class="btn btn-sec bt" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
+          Edit DP
         </button>
-        <button class="btn btn-sec u bt" type="button" style="margin-top: 10px; color: white; border: 0 !important" onclick="redirect('add_post.php')">
-          add post
+        <button class="btn btn-sec bt" type="button" style="margin-top: 12px; color: white; border: 0 !important" onclick="redirect('add_post.php')">
+          Add post
         </button >
-        <button class="btn btn-sec u bt" type="button" style="margin-top: 10px; color: white; border: 0 !important" onclick="redirect('add_post.php')">
+        <button class="btn btn-sec bt" type="button" style="margin-top: 12px; color: white; border: 0 !important" onclick="redirect('edit.php')">
           Edit Profile
         </button >
-        <button class="btn btn-sec u bt" type="button" style="margin-top: 10px; color: white; border: 0 !important" onclick="redirect('add_post.php')">
-          wallet
+        <button class="btn btn-sec bt" type="button" style="margin-top: 12px; color: white; border: 0 !important" onclick="redirect('wallet.php')">
+          Wallet
         </button >
         </p>
+
+
       <div class="collapse" id="collapse1">
         <div class="" style="font-size: 12px">
-          <form action="upload.php" enctype="multipart/form-data" method="post">
+          <form action="upload.php" enctype="multipart/form-data" method="post" style="margin: 10px 0 0 0">
               <input type="file" name="image">
               <input type="submit" class="btn btn-success bt" style="color: white">
           </form>
         </div>
       </div>
 
+
+
+
       <!-- Post area -->
       <?php
       $user_id = $new->FindColumn("users", "phone='$phone'", "id");
-      $result = $new->ReturnResult("posts", "user_id='$user_id'");
+      $result = $new->ReturnResult("posts", "user_id='$user_id' ORDER BY id DESC");
       while($row = mysqli_fetch_array($result)) {
           ?>
-          <div style="background: rgba(0,0,0,0.04); margin: 10px 0; padding: 0; float: left" class="col-12; col-md-4">
+          <div style="background: rgba(0,0,0,0.04); margin: 10px 0; padding: 0; float: left" class="col-12">
             <img src="<?php echo $row['image_dir']; ?>" width="100%">
             <p class="u" style="padding: 2px 10px; margin: 0"><?php echo $row['caption']; ?></p>
 

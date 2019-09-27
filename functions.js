@@ -16,5 +16,5 @@ function callajax(link, d) {
 function load(id) {
     var lim = $("#load").attr("data");
     $("#load").attr("data", parseInt(lim)+1);
-    $("#"+id).load( window.location+"?limit="+lim+" #"+id);
+    $("#"+id).load( window.location+"?limit="+lim+" #"+id+">*");
 }

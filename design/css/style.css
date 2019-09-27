@@ -52,3 +52,14 @@ circle{
 	box-shadow: 0 0 0;
 	color: white
 }
+
+.crd{
+	background: rgba(0,0,0,0.04);
+	min-height: 30px;
+	padding: 0;
+	margin:10px 0;
+}
+
+button:focus{
+	box-shadow: 0 0 0 !important;
+}
